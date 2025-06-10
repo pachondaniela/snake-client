@@ -9,7 +9,10 @@ const connect = function () {
     port: 50541
   });
 
+// Set up interface to handle user input from stdin
+
 // The code below interprets incoming data
+
 
   conn.setEncoding("utf8");
 
@@ -18,7 +21,17 @@ const connect = function () {
     });
 
     conn.on("connect" , () => {
-      conn.write("Name: DPP")
+      conn.write("Name: DPP") ;
+      // conn.write("Move: up");
+      setInterval(() => {
+        conn.write("Move: up");
+      } , 500)
+      setInterval(() => {
+        conn.write("Move: right");
+      } , 1000)
+      
+     
     })
+
 }
 module.exports = connect;
