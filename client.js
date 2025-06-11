@@ -9,8 +9,6 @@ const connect = function () {
     port: 50541
   });
 
-// Set up interface to handle user input from stdin
-
 // The code below interprets incoming data
 
 
