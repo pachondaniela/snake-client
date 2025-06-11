@@ -10,26 +10,9 @@ const connect = function () {
   });
 
 // The code below interprets incoming data
-
-
-  conn.setEncoding("utf8");
-
-    conn.on("data" , (data) => {
-    console.log("Server says: ", data);
-    });
-
-    conn.on("connect" , () => {
-      conn.write("Name: DPP") ;
-      // conn.write("Move: up");
-      setInterval(() => {
-        conn.write("Move: up");
-      } , 500)
-      setInterval(() => {
-        conn.write("Move: right");
-      } , 1000)
-      
-     
-    })
+ 
+  return conn;
 
 }
+
 module.exports = connect;
