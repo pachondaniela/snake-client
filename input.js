@@ -21,22 +21,23 @@ const setupInput = (conn) => {
 };
 
 const handleUserInput = function (key) {
-  if (key === "\u0003") {
-    process.exit();
-  } else if (key === "w") {
-    connection.write("Move: up");
-  } else if (key === "a") {
-    connection.write("Move: left");
-  } else if (key === "s") {
-    connection.write("Move: down");
-  } else if (key === "d") {
-    connection.write("Move: right");
-  } else if (key === "q"){
-    connection.write("Say: You are fun!")
-  } else if (key === "l") {
-    connection.write("Say: I am hungry!!")
-  }
 
+  const MOVES = {
+    w: 'Move: up',
+    a: 'Move: left',
+    s: 'Move: down',
+    d: 'Move: right',
+    q: 'Say: You are fun!',
+    l: 'Say: I am hungry!!',
+  };
+
+ if (key === '\u0003') {
+    process.exit();
+}
+
+if (MOVES[key]) {
+    connection.write(MOVES[key]);
+}
 
 };
 

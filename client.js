@@ -10,10 +10,22 @@ const connect = function () {
     port: PORT
   });
 
-// The code below interprets incoming data
- 
-  return conn;
+ // Set the encoding so incoming data is readable
+  conn.setEncoding("utf8");
 
-}
+  // This runs once the connection is established
+  conn.on("connect", () => {
+    console.log("Successfully connected to game server!");
+    conn.write("Name: DPA"); // You can customize your name here
+  });
+
+  // Optional: handle data from the server
+  conn.on("data", (data) => {
+    console.log("Server says:", data);
+  });
+
+  return conn;
+};
+
 
 module.exports = connect;
