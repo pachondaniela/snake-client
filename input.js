@@ -1,5 +1,3 @@
-const connect = require("./client.js")
-
 let connection;
 
 const setupInput = (conn) => {

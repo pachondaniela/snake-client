@@ -1,5 +1,8 @@
 ## This is the Snake Project
 
+Server: https://github.com/lighthouse-labs/snek-multiplayer#
+Client: https://github.com/pachondaniela/snake-client.git
+
 # 🐍 Snake Game Client
 
 A command-line multiplayer Snake game client built in **JavaScript (Node.js)**. This project connects to a TCP game server and enables real-time gameplay using keyboard input.
